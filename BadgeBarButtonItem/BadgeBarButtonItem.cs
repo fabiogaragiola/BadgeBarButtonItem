@@ -329,6 +329,8 @@ namespace Utility
 					Font = this.BadgeFont,
 					TextAlignment = UITextAlignment.Center,
 				};
+				// Fix for iOS 9: Correctly apply the CornerRadius later on
+				_badge.Layer.MasksToBounds = true;
 
 				this.CustomView.AddSubview (_badge);
 				this.UpdateBadgeValueAnimated(false);
