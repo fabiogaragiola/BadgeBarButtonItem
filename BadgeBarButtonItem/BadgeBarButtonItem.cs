@@ -17,6 +17,7 @@ namespace Utility
 
 		UIColor _badgeBGColor;
 		UIColor _badgeTextColor;
+		UIColor _badgeBorderColor;
 
 		UIFont _badgeFont;
 
@@ -24,6 +25,7 @@ namespace Utility
 		nfloat _badgeMinSize;
 		nfloat _badgeOriginX;
 		nfloat _badgeOriginY;
+		nfloat _badgeBorderWidth;
 
 		bool _shouldHideBadgeAtZero;
 		bool _shouldAnimateBadge;
@@ -76,6 +78,22 @@ namespace Utility
 				_badgeTextColor = value;
 				if (_badge != null) {
 					this.RefreshBadge ();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Gets or sets the badge border color.
+		/// </summary>
+		/// <value>The color of the badge border.</value>
+		public UIColor BadgeBorderColor {
+			get {
+				return _badgeBorderColor;
+			}
+			set {
+				_badgeBorderColor = value;
+				if (_badge != null) {
+					this.RefreshBadge();
 				}
 			}
 		}
@@ -161,6 +179,22 @@ namespace Utility
 		}
 
 		/// <summary>
+		/// Gets or sets the width of the badge border.
+		/// </summary>
+		/// <value>The badge border width.</value>
+		public nfloat BadgeBorderWidth {
+			get {
+				return _badgeBorderWidth;
+			}
+			set {
+				_badgeBorderWidth = value;
+				if (_badge != null) {
+					this.RefreshBadge();
+				}
+			}
+		}
+
+		/// <summary>
 		/// Gets or sets a value indicating whether this <see cref="Utility.BadgeBarButtonItem"/> should remove the badge when reaching zero.
 		/// </summary>
 		/// <value><c>true</c> if should hide badge at zero; otherwise, <c>false</c>.</value>
@@ -209,13 +243,14 @@ namespace Utility
 		void Initializer()
 		{
 			// Default design initialization
-			this.BadgeBGColor   = UIColor.Red;
-			this.BadgeTextColor = UIColor.White;			
-			this.BadgeFont      = UIFont.SystemFontOfSize (12);
-			this.BadgePadding   = 6;
-			this.BadgeMinSize   = 8;
-			this.BadgeOriginX   = 7;
-			this.BadgeOriginY   = -9;
+			this.BadgeBGColor     = UIColor.Red;
+			this.BadgeTextColor   = UIColor.White;			
+			this.BadgeFont        = UIFont.SystemFontOfSize (12);
+			this.BadgePadding     = 6;
+			this.BadgeMinSize     = 8;
+			this.BadgeOriginX     = 7;
+			this.BadgeOriginY     = -9;
+			this.BadgeBorderWidth = 1f;
 			this.ShouldHideBadgeAtZero = true;
 			this.ShouldAnimateBadge = true;
 			// Avoids badge to be clipped when animating its scale
@@ -231,6 +266,17 @@ namespace Utility
 			_badge.TextColor        = this.BadgeTextColor;
 			_badge.BackgroundColor  = this.BadgeBGColor;
 			_badge.Font             = this.BadgeFont;
+
+			var borderColor = this.BadgeBorderColor;
+			if (borderColor != null)
+			{
+				_badge.Layer.BorderColor = borderColor.CGColor;
+				_badge.Layer.BorderWidth = BadgeBorderWidth;
+			}
+			else
+			{
+				_badge.Layer.BorderColor = null;
+			}
 		}
 
 		void UpdateBadgeFrame()
@@ -331,6 +377,13 @@ namespace Utility
 				};
 				// Fix for iOS 9: Correctly apply the CornerRadius later on
 				_badge.Layer.MasksToBounds = true;
+
+				var borderColor = this.BadgeBorderColor;
+				if (borderColor != null)
+				{
+					_badge.Layer.BorderColor = borderColor.CGColor;
+					_badge.Layer.BorderWidth = BadgeBorderWidth;
+				}
 
 				this.CustomView.AddSubview (_badge);
 				this.UpdateBadgeValueAnimated(false);
