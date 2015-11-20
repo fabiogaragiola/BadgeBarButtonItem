@@ -1,13 +1,11 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
-// actions declared in your storyboard file.
-// Manual changes to this file will not be maintained.
+// This file has been generated automatically by Xamarin Studio to store outlets and
+// actions made in the UI designer. If it is removed, they will be lost.
+// Manual changes to this file may not be handled correctly.
 //
 using Foundation;
-using System;
 using System.CodeDom.Compiler;
-using UIKit;
 
 namespace BadgeBarButtonItemExample
 {
@@ -15,17 +13,17 @@ namespace BadgeBarButtonItemExample
 	partial class ViewController
 	{
 		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton ButtonAdd { get; set; }
+		UIKit.UIButton ButtonAdd { get; set; }
 
 		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton ButtonChangeColor { get; set; }
+		UIKit.UIButton ButtonChangeBorderColor { get; set; }
 
 		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton ButtonChangePosition { get; set; }
+		UIKit.UIButton ButtonChangeColor { get; set; }
 
+		[Outlet]
+		UIKit.UIButton ButtonChangePosition { get; set; }
+		
 		void ReleaseDesignerOutlets ()
 		{
 			if (ButtonAdd != null) {
@@ -41,6 +39,11 @@ namespace BadgeBarButtonItemExample
 			if (ButtonChangePosition != null) {
 				ButtonChangePosition.Dispose ();
 				ButtonChangePosition = null;
+			}
+
+			if (ButtonChangeBorderColor != null) {
+				ButtonChangeBorderColor.Dispose ();
+				ButtonChangeBorderColor = null;
 			}
 		}
 	}

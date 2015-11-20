@@ -54,6 +54,9 @@ public UIColor BadgeBGColor { get; set; }
 // Badge text color.
 public UIColor BadgeTextColor { get; set; }
 
+// Badge border color.
+public UIColor BadgeBorderColor { get; set; }
+
 // Badge font.
 public UIFont BadgeFont { get; set; }
 
@@ -68,6 +71,9 @@ public nfloat BadgeOriginX { get; set; }
 
 // Y value for offseting the badge over the BarButtonItem.
 public nfloat BadgeOriginY { get; set; }
+
+// Width of the border.
+public nfloat BadgeBorderWidth { get; set; }
 
 // Value indicating whether the badge should be removed when reaching zero.
 public bool ShouldHideBadgeAtZero { get; set; }
