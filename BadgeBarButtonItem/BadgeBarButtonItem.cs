@@ -7,7 +7,7 @@ using Foundation;
 
 namespace Utility
 {
-	public sealed class BadgeBarButtonItem : UIBarButtonItem
+	public class BadgeBarButtonItem : UIBarButtonItem
 	{
 		#region Fields
 
@@ -240,7 +240,7 @@ namespace Utility
 			}
 		}
 
-		void Initializer()
+		protected virtual void Initializer()
 		{
 			// Default design initialization
 			this.BadgeBGColor     = UIColor.Red;
