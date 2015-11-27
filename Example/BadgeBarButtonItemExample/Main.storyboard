@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Nx-np-Y6o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Nx-np-Y6o">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--BadgeBarButtonItem-->
@@ -26,13 +27,13 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badge over BarButtonItem Xamarin.iOS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0a-y1-wjy">
-                                <rect key="frame" x="198" y="245" width="205" height="41"/>
+                                <rect key="frame" x="199" y="245" width="202" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sE-hW-C03">
-                                <rect key="frame" x="230" y="474" width="140" height="44"/>
+                                <rect key="frame" x="231" y="454" width="139" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="m3E-Yp-ZIF"/>
                                 </constraints>
@@ -41,7 +42,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHO-Ym-1Nx">
-                                <rect key="frame" x="220" y="405" width="160" height="44"/>
+                                <rect key="frame" x="221" y="395" width="159" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="6QF-8q-Ydf"/>
                                 </constraints>
@@ -49,28 +50,34 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zx3-DI-Qfn">
+                                <rect key="frame" x="230" y="513" width="142" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OXD-Od-umi"/>
+                                </constraints>
+                                <state key="normal" title="Change border color">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Z0a-y1-wjy" secondAttribute="centerX" id="3mf-pm-4XJ"/>
-                            <constraint firstAttribute="centerX" secondItem="Z0a-y1-wjy" secondAttribute="centerX" id="7K7-l6-5Z5"/>
-                            <constraint firstItem="hHO-Ym-1Nx" firstAttribute="top" secondItem="8Tk-nk-USN" secondAttribute="bottom" constant="25" id="OaN-0z-Q6w"/>
-                            <constraint firstItem="4sE-hW-C03" firstAttribute="top" secondItem="hHO-Ym-1Nx" secondAttribute="bottom" constant="25" id="Uw6-6V-lNS"/>
+                            <constraint firstItem="Zx3-DI-Qfn" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="JbG-3a-g0R"/>
+                            <constraint firstItem="hHO-Ym-1Nx" firstAttribute="top" secondItem="8Tk-nk-USN" secondAttribute="bottom" constant="15" id="OaN-0z-Q6w"/>
+                            <constraint firstItem="4sE-hW-C03" firstAttribute="top" secondItem="hHO-Ym-1Nx" secondAttribute="bottom" constant="15" id="Uw6-6V-lNS"/>
+                            <constraint firstItem="Zx3-DI-Qfn" firstAttribute="top" secondItem="4sE-hW-C03" secondAttribute="bottom" constant="15" id="XPs-8p-Cf3"/>
                             <constraint firstAttribute="centerX" secondItem="4sE-hW-C03" secondAttribute="centerX" id="c6t-Ng-wU5"/>
                             <constraint firstItem="8Tk-nk-USN" firstAttribute="top" secondItem="Z0a-y1-wjy" secondAttribute="bottom" constant="50" id="hrI-Ng-3A5"/>
                             <constraint firstAttribute="centerY" secondItem="Z0a-y1-wjy" secondAttribute="centerY" constant="35" id="i9O-5a-reV"/>
                             <constraint firstAttribute="centerX" secondItem="8Tk-nk-USN" secondAttribute="centerX" id="juU-eQ-gO4"/>
                             <constraint firstAttribute="centerX" secondItem="hHO-Ym-1Nx" secondAttribute="centerX" id="rXm-5O-HBB"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="7K7-l6-5Z5"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="BadgeBarButtonItem" id="dZc-JX-3G6"/>
                     <connections>
                         <outlet property="ButtonAdd" destination="8Tk-nk-USN" id="name-outlet-8Tk-nk-USN"/>
+                        <outlet property="ButtonChangeBorderColor" destination="Zx3-DI-Qfn" id="z0E-2G-aWM"/>
                         <outlet property="ButtonChangeColor" destination="4sE-hW-C03" id="name-outlet-4sE-hW-C03"/>
                         <outlet property="ButtonChangePosition" destination="hHO-Ym-1Nx" id="name-outlet-hHO-Ym-1Nx"/>
                     </connections>

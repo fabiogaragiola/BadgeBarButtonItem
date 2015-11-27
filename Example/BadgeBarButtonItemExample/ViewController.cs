@@ -83,6 +83,17 @@ namespace BadgeBarButtonItemExample
 					j = 0;
 			};
 
+			var k = 0;
+
+			// Cycle through the border colors
+			ButtonChangeBorderColor.TouchUpInside += (sender, e) => {
+				var c = _colors[k++];
+				barButton.BadgeBorderColor = c;
+
+				if (k >= _colors.Length)
+					k = 0;
+			};
+
 			// Add the barButton as the RightBarButtonItem of the navigation bar
 			this.NavigationItem.RightBarButtonItem = barButton;
 		}
