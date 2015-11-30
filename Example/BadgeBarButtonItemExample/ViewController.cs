@@ -42,7 +42,7 @@ namespace BadgeBarButtonItemExample
 				BadgeOriginX = _positions[_positions.Length -1].Item1,
 				BadgeOriginY = _positions[_positions.Length -1].Item2,
 			};
-				
+
 			// Reset the badge when tapping on the customButton
 			customButton.TouchUpInside += (sender, e) => { 
 				counter = 0;
@@ -73,7 +73,6 @@ namespace BadgeBarButtonItemExample
 
 			// Cycle through the positions
 			ButtonChangePosition.TouchUpInside += (sender, e) => {
-
 				barButton.BadgeOriginX = _positions[j].Item1;
 				barButton.BadgeOriginY = _positions[j].Item2;
 
@@ -87,17 +86,23 @@ namespace BadgeBarButtonItemExample
 
 			// Cycle through the border colors
 			ButtonChangeBorderColor.TouchUpInside += (sender, e) => {
+				if(barButton.BadgeBorderWidth == 0)
+					barButton.BadgeBorderWidth = 1;
+
 				var c = _colors[k++];
 				barButton.BadgeBorderColor = c;
 
 				if (k >= _colors.Length)
+				{
 					k = 0;
+					barButton.BadgeBorderWidth = 0;
+				}
 			};
 
 			// Add the barButton as the RightBarButtonItem of the navigation bar
 			this.NavigationItem.RightBarButtonItem = barButton;
 		}
-			
+
 		public override void DidReceiveMemoryWarning ()
 		{
 			base.DidReceiveMemoryWarning ();
@@ -105,4 +110,3 @@ namespace BadgeBarButtonItemExample
 		}
 	}
 }
-
